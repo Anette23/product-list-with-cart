@@ -12,7 +12,6 @@ const Cart = ({ cart, deleteProduct }) => {
 
   const formattedTotalPrice = totalPrice.toFixed(2);
 
-
   return (
     <section className="cart">
       <h2>Your Cart ({productCount})</h2>
