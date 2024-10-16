@@ -10,6 +10,9 @@ const Cart = ({ cart, deleteProduct }) => {
     0
   );
 
+  const formattedTotalPrice = totalPrice.toFixed(2);
+
+
   return (
     <section className="cart">
       <h2>Your Cart ({productCount})</h2>
@@ -28,8 +31,8 @@ const Cart = ({ cart, deleteProduct }) => {
                 <div className="activeCartData">
                   <div className="activeCartLeft">
                     <p className="count">{product.count}x</p>
-                    <p className="price">@ ${product.price}</p>
-                    <p className="total">${itemTotal}</p>
+                    <p className="price">@ ${product.price.toFixed(2)}</p>
+                    <p className="total">${itemTotal.toFixed(2)}</p>
                   </div>
                   <div>
                     <button
@@ -45,7 +48,7 @@ const Cart = ({ cart, deleteProduct }) => {
           })}
           <div className="orderTotal">
             <p>Order Total</p>
-            <span>${totalPrice}</span>
+            <span>${formattedTotalPrice}</span>
           </div>
 
           <div className="carbonNeutral">

@@ -14,7 +14,9 @@ const ProductCard = ({
       {data.map((product) => {
         const count = cart.reduce((acc, cartProduct) => {
           return cartProduct.id === product.id ? acc + cartProduct.count : acc;
+
         }, 0);
+
 
         return (
           <article key={product.id}>
@@ -48,7 +50,7 @@ const ProductCard = ({
             </div>
             <small>{product.category}</small>
             <h3>{product.name}</h3>
-            <p>${product.price}</p>
+            <p>${product.price.toFixed(2)}</p>
           </article>
         );
       })}
