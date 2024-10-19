@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export const StartNewOrderBtn = ({closeModal}) => {
+export const StartNewOrderBtn = ({ closeModal }) => {
   return (
-    <button className='startNewOrderBtn' onClick={closeModal}>Start New Order</button>
-  )
-}
+    <button className="startNewOrderBtn" onClick={closeModal}>
+      Start New Order
+    </button>
+  );
+};
 
-
-export default StartNewOrderBtn
+export default StartNewOrderBtn;

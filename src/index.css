@@ -151,7 +151,6 @@ main {
   border-radius: 10px;
   padding: 1.5rem;
   margin-top: 2.5rem;
-  
 }
 
 .cart article {
@@ -295,7 +294,7 @@ main {
 /* MEDIA QUERIES */
 @media (min-width: 500px) {
   .productCard {
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
   }
 
   aside {
@@ -314,8 +313,6 @@ main {
   .cart {
     margin-top: -5rem;
   }
-
-  
 }
 
 @media (min-width: 1200px) {
