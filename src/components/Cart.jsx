@@ -4,7 +4,7 @@ import removeIcon from "../../public/assets/images/icon-remove-item.svg";
 import carbonNeutral from "../../public/assets/images/icon-carbon-neutral.svg";
 import ConfirmOrderBtn from "./ConfirmOrderBtn";
 import ConfirmOrderModal from "./ConfirmOrderModal";
-const Cart = ({ cart, deleteProduct }) => {
+const Cart = ({ cart,setCart,setActiveCards, deleteProduct }) => {
   const productCount = cart.reduce((acc, product) => acc + product.count, 0);
 
   const totalPrice = cart.reduce(
@@ -22,6 +22,12 @@ const Cart = ({ cart, deleteProduct }) => {
 
   const closeModal = () => {
     setIsModalOpen(false)
+  }
+
+  const resetCart = () => {
+    setCart([])
+    setIsModalOpen(false)
+    setActiveCards([])
   }
   return (
     <section className="cart">
@@ -68,7 +74,7 @@ const Cart = ({ cart, deleteProduct }) => {
             </p>
           </div>
           <ConfirmOrderBtn openModal={openModal}/>
-          <ConfirmOrderModal isModalOpen={isModalOpen} closeModal={closeModal}/>
+          <ConfirmOrderModal isModalOpen={isModalOpen} closeModal={closeModal}  cart={cart} resetCart={resetCart}/>
         </article>
       )}
     </section>

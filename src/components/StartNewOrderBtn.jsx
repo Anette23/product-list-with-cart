@@ -1,8 +1,8 @@
 import React from "react";
 
-export const StartNewOrderBtn = ({ closeModal }) => {
+export const StartNewOrderBtn = ({ resetCart }) => {
   return (
-    <button className="startNewOrderBtn" onClick={closeModal}>
+    <button className="startNewOrderBtn" onClick={resetCart}>
       Start New Order
     </button>
   );

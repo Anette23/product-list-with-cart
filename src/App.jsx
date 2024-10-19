@@ -58,6 +58,8 @@ const App = () => {
     });
   };
 
+  
+
   return (
     <>
       <header>
@@ -72,7 +74,7 @@ const App = () => {
           toggleActive={toggleActive}
         />
         <aside>
-          <Cart cart={cart} deleteProduct={deleteProduct} />
+          <Cart cart={cart} setCart={setCart} setActiveCards={setActiveCards} deleteProduct={deleteProduct} />
         </aside>
       </main>
     </>
