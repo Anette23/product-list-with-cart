@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ConfirmOrderBtn = () => {
+const ConfirmOrderBtn = ({openModal}) => {
   return (
-    <button className='confirmOrderBtn' >Confirm Order</button>
+    <button className='confirmOrderBtn' onClick={openModal}  id="openModal">Confirm Order</button>
   )
 }
 

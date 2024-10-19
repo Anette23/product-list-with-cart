@@ -1,24 +1,27 @@
-import React from "react";
 import orderConfirmed from "../../public/assets/images/icon-order-confirmed.svg";
 import StartNewOrderBtn from "./StartNewOrderBtn";
 
-const ConfirmOrderModal = ({ cart }) => {
+const ConfirmOrderModal = ({ isModalOpen, closeModal }) => {
   return (
-    <article>
-      <header>
-        <img src={orderConfirmed} alt="succes icon" />
-        <h1>Order Confirmed</h1>
-        <p>We hope you enjoy your food!</p>
-      </header>
-      <main>
-        {cart.map((product) => (
-          <>
-            <div key={product.id}>
+    <>
+      {isModalOpen && (
+        <>
+          <div className="overlay" onClick={closeModal}></div>
+          <dialog open={isModalOpen} className="modal">
+            <header>
+              <img src={orderConfirmed} alt="succes icon" />
+              <h1>Order Confirmed</h1>
+              <p>We hope you enjoy your food!</p>
+            </header>
+            <main>
+              {/* {cart.map((product) => (
+          <div key={product.id}>
+            <div>
               <div className="left">
                 <img src={product.image.thumbnail} alt={product.image.name} />{" "}
                 <h4>{product.name}</h4>
                 <p className="count">{product.count}x</p>
-                <p className="price">@ ${product.price}</p>
+                <p className="price">@ ${product.price.toFixed(2)}</p>
               </div>
               <div className="right">
                 <p className="total">{itemTotal}</p>
@@ -28,13 +31,16 @@ const ConfirmOrderModal = ({ cart }) => {
               <p>Order Total</p>
               <span>${totalPrice}</span>
             </div>
-          </>
-        ))}
-      </main>
-      <footer>
-        <StartNewOrderBtn />
-      </footer>
-    </article>
+          </div>
+        ))} */}
+            </main>
+            <footer>
+              <StartNewOrderBtn closeModal={closeModal} />
+            </footer>
+          </dialog>
+        </>
+      )}
+    </>
   );
 };
 
