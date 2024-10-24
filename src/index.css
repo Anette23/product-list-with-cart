@@ -33,6 +33,10 @@ button {
   outline: none;
 }
 
+:focus-visible {
+  outline: 2px double black; 
+}
+
 html {
   font-size: 1rem;
   font-family: "Red Hat Text", sans-serif;
@@ -94,7 +98,6 @@ main {
   color: var(--rose500);
 }
 
-/* ACTIVE BUTTON */
 .activeBtn {
   border-radius: 50px;
   padding: 0.5rem 1rem;
@@ -129,7 +132,6 @@ main {
   color: var(--rose50);
 }
 
-/* ACTIVE BUTTON */
 
 .productCard small {
   color: var(--rose500);
@@ -273,11 +275,9 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Stmavenie pozadia */
-  z-index: 1; /* Aby bolo nad všetkým ostatným okrem modalu */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
 }
-
-
 
 /* MEDIA QUERIES */
 @media (min-width: 500px) {

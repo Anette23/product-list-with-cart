@@ -4,7 +4,7 @@ import removeIcon from "../../public/assets/images/icon-remove-item.svg";
 import carbonNeutral from "../../public/assets/images/icon-carbon-neutral.svg";
 import ConfirmOrderBtn from "./ConfirmOrderBtn";
 import ConfirmOrderModal from "./ConfirmOrderModal";
-const Cart = ({ cart,setCart,setActiveCards, deleteProduct }) => {
+const Cart = ({ cart, setCart, setActiveCards, deleteProduct }) => {
   const productCount = cart.reduce((acc, product) => acc + product.count, 0);
 
   const totalPrice = cart.reduce(
@@ -17,18 +17,18 @@ const Cart = ({ cart,setCart,setActiveCards, deleteProduct }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-  }
+    setIsModalOpen(false);
+  };
 
   const resetCart = () => {
-    setCart([])
-    setIsModalOpen(false)
-    setActiveCards([])
-  }
+    setCart([]);
+    setIsModalOpen(false);
+    setActiveCards([]);
+  };
   return (
     <section className="cart">
       <h2>Your Cart ({productCount})</h2>
@@ -53,7 +53,7 @@ const Cart = ({ cart,setCart,setActiveCards, deleteProduct }) => {
                   <div>
                     <button
                       className="deleteBtn"
-                      onClick={() => deleteProduct(product.id, product.name)}
+                      onClick={() => deleteProduct(product.id)}
                     >
                       <img src={removeIcon} alt="delete product button" />
                     </button>
@@ -73,8 +73,13 @@ const Cart = ({ cart,setCart,setActiveCards, deleteProduct }) => {
               This is a <span>carbon-neutral</span> delivery
             </p>
           </div>
-          <ConfirmOrderBtn openModal={openModal}/>
-          <ConfirmOrderModal isModalOpen={isModalOpen} closeModal={closeModal}  cart={cart} resetCart={resetCart}/>
+          <ConfirmOrderBtn openModal={openModal} />
+          <ConfirmOrderModal
+            isModalOpen={isModalOpen}
+            closeModal={closeModal}
+            cart={cart}
+            resetCart={resetCart}
+          />
         </article>
       )}
     </section>
